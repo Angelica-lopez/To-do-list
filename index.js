@@ -5,14 +5,21 @@ const $list = document.querySelector(".js-list");
 const $clear = document.querySelector(".js-clear");
 const $x = document.querySelector(".js-x");
 const $contentListItem = document.querySelector(".js-contentList");
-let array = []
+
 
 $buttonAdd.addEventListener("click", function() {
-    if(!($input.value === "")) {
+    let inputTxt = $input.value;
+    if(inputTxt === "") {
+        alert("Please, write a task...")
+    }else {
+        let item = $contentListItem.cloneNode(true);
+        var display = document.querySelector(".js-contentList").style.display= "block";
         $listTask.innerHTML = $input.value;
-        $input.value = "";
+        $list.insertBefore(item, $list.childNodes[0]);
         var display = document.querySelector(".js-list").style.display= "flex";
+        $input.value = "";
     }
+
 })
 
 $clear.addEventListener("click", function() {
@@ -20,6 +27,5 @@ $clear.addEventListener("click", function() {
 })
 
 $x.addEventListener("click", function() {
-    $contentListItem.style.display= "none";
+    $contentListItem.parentElement.remove;
 })
-
