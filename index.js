@@ -27,5 +27,5 @@ $clear.addEventListener("click", function() {
 })
 
 $x.addEventListener("click", function() {
-    $contentListItem.parentElement.remove;
+    $contentListItem.style.display= "none";
 })
